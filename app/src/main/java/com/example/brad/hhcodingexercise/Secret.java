@@ -13,21 +13,4 @@ public class Secret {
         return input * input;
     }
 
-    public boolean[] findPrimes (int limit) {
-        int limitSqRoot = (int) Math.sqrt(limit);
-        boolean[] isPrime = new boolean[limit + 1];
-        for (int i = 0; i < limit + 1; i++) {
-            isPrime[i] = true;
-        }
-
-        for (int j = 2; j <= limitSqRoot; j++) {
-            if (isPrime[j]) {
-                for (int k = j * j; k <= limit; k += j)
-                    isPrime[k] = false;
-            }
-        }
-
-        return isPrime;
-
-    }
 }
